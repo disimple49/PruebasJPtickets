@@ -7,15 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div id="receipt-area">
-            <div id="ticket" class="ticket">
+    <div class="ui-container">
+        <div id="capture-area">
+            <div id="receipt" class="receipt-paper">
                 </div>
         </div>
         
-        <div class="controls">
-            <button onclick="generateReceipt()">GENERAR DESTINO (生成)</button>
-            <button onclick="downloadPDF()">GUARDAR PDF HD</button>
+        <div class="menu">
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="translate-check" checked onchange="generate()">
+                    <span class="slider"></span>
+                </label>
+                <span class="label-text">Mostrar Traducción (Español)</span>
+            </div>
+            
+            <button class="btn-gen" onclick="generate()">NUEVA EXISTENCIA (生成)</button>
+            <button class="btn-save" onclick="savePDF()">DESCARGAR PDF HD</button>
+            <p class="hint">Tip: En Photoshop, importa el PDF a 300DPI</p>
         </div>
     </div>
 
