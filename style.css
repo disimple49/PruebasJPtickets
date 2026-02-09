@@ -1,0 +1,85 @@
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    text-align: center;
+}
+
+.ticket {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    min-height: 500px;
+    text-align: left;
+    line-height: 1.2;
+    position: relative;
+}
+
+/* Efecto de borde de papel cortado */
+.ticket::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 10px;
+    background: linear-gradient(-45deg, transparent 5px, #fff 5px), 
+                linear-gradient(45deg, transparent 5px, #fff 5px);
+    background-size: 10px 10px;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px dashed #000;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.header h1 { font-size: 24px; margin: 0; }
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.total-section {
+    border-top: 2px solid #000;
+    margin-top: 15px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.barcode {
+    width: 100%;
+    height: 50px;
+    background: repeating-linear-gradient(90deg, #000, #000 2px, #fff 2px, #fff 4px);
+    margin: 15px 0;
+}
+
+.controls {
+    margin-top: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    font-weight: bold;
+    margin: 5px;
+}
