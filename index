@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaos Receipt Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="receipt-area">
+            <div id="ticket" class="ticket">
+                </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="generateReceipt()">GENERAR DESTINO (生成)</button>
+            <button onclick="downloadPDF()">GUARDAR PDF HD</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
