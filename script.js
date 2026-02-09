@@ -105,19 +105,30 @@ function generate() {
 
 function savePDF() {
     const element = document.getElementById('receipt');
+    
+    // Calculamos la altura dinámica para que no se corte por abajo si el ticket es largo
+    const alturaEstimada = element.offsetHeight * 0.2645; // Convierte px a mm aprox.
+    const paddingExtra = 20; 
+
     const opt = {
-        margin: 0,
+        margin: [0, 0, 0, 0], // Eliminamos márgenes que causan el desplazamiento
         filename: 'receipt_chaos_HD.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: { 
-            scale: 4, // Escala alta para Photoshop
-            useCORS: true,
-            letterRendering: true
+            scale: 3, 
+            useCORS: true, 
+            letterRendering: true,
+            scrollX: 0,
+            scrollY: 0
         },
-        jsPDF: { unit: 'mm', format: [85, 230], orientation: 'portrait' }
+        jsPDF: { 
+            unit: 'mm', 
+            format: [85, alturaEstimada + paddingExtra], // Ancho fijo de 85mm
+            orientation: 'portrait' 
+        }
     };
+
     html2pdf().set(opt).from(element).save();
 }
-
 // Generar el primero al cargar la página
 window.onload = generate;
